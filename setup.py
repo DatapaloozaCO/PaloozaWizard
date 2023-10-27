@@ -12,10 +12,10 @@ with open('requirements.txt') as f:
     requirements = f.readlines()
 
 setup(
-    name="search_engines_kit",
+    name="palooza_wizard",
     version='{{VERSION_PLACEHOLDER}}',
     description="Datapalooza Scraper Framework",
-    url = "https://github.com/Juanchobanano/Search-Engines-Scraper",
+    url = "https://github.com/DatapaloozaCO/datapalooza_scraper_framework",
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
