@@ -14,6 +14,7 @@ class PaloozaGraph:
         self.sizes = []
         self.counter = 0
         self.labels = []
+        self.root = "root__1__body__*"
 
     # Get colors
     def get_color(self, soup: BeautifulSoup) -> None:
@@ -46,10 +47,11 @@ class PaloozaGraph:
         return node_name
 
     # Get node properties
-    def get_node_properties(self, soup: BeautifulSoup, parent_name: str) -> dict:
+    def get_node_properties(self, soup: BeautifulSoup, parent_name: str, node_name: str) -> dict:
         properties = {
             "tag": soup.name, # h1, h2, p, ..., 
             "parent_name": parent_name,
+            "node_name": node_name,
             "number": self.counter,
             "class": soup.get("class"), # ['a', 'b']
             "id": soup.get("id"),       #
@@ -62,7 +64,7 @@ class PaloozaGraph:
         return properties
 
     # Add nodes to the graph
-    def add_nodes(self, soup: BeautifulSoup, parent_name: str = "", index: int = 0, depth: int = 0):
+    def add_nodes(self, soup: BeautifulSoup, parent_name: str = "", index: int = 1, depth: int = 0):
 
         if soup is None:
             return
@@ -73,7 +75,7 @@ class PaloozaGraph:
             node_name = self.get_node_name(soup, parent_name, index)
 
             # Add node to the graph.
-            properties = self.get_node_properties(soup, parent_name)
+            properties = self.get_node_properties(soup, parent_name, node_name)
             self.G.add_node(node_name, **properties)
             self.counter += 1
 
@@ -85,15 +87,17 @@ class PaloozaGraph:
             children = soup.findChildren(recursive=False)
 
             # While there is just one children, keep going down
-            while len(children) == 1:
-                children = children[0]
-                children = children.findChildren(recursive=False)
+            #while len(children) == 1:
+            #    children = children[0]
+            #    children = children.findChildren(recursive=False)
 
             # Add children only if there is more than 1 children
-            if len(children) > 1:
-                for i in range(len(children)):
-                    self.add_nodes(children[i], node_name, i, depth + 1)
+            #if len(children) > 1:
+            for i in range(len(children)):
+                self.add_nodes(children[i], node_name, i + 1, depth + 1)
 
-    def get_graph(self, soup: BeautifulSoup):
+    def get_graph(self, soup: BeautifulSoup, labels_to_integers: bool = True):
         self.add_nodes(soup, ct.ROOT_LABEL)
-        self.G = nx.convert_node_labels_to_integers(self.G)
+        if labels_to_integers:
+            self.G = nx.convert_node_labels_to_integers(self.G)
+            self.root = 0

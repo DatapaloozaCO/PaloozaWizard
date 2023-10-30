@@ -18,8 +18,8 @@ def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0,
 def get_system_message_for_function(function_name: str) -> str:
     system_message = f"""
     Create a Python function with a proper name starting with '{function_name}' that extracts all relevant data from 
-    the provided HTML code by the user and returns the data as a dictionary. Please utilize 
-    Beautiful Soup (beautifulsoup4) to implement this Python function. The output should 
+    the provided HTML code by the user and returns the data as a dictionary. The keys of the dictionaries should be as 
+    few as possible. Utilize Beautiful Soup (beautifulsoup4) to implement this Python function. The output should 
     consist solely of Python code without any English words.
     """
     return system_message

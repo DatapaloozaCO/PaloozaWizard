@@ -9,6 +9,7 @@ HTML_OUTPUT_FOLDER = "./outputs/html/"
 PYTHON_OUTPUT_FOLDER = "./outputs/python/"
 AGENT_OUTPUT_FOLDER = "./outputs/agent/"
 IMPORTANCE_OUTPUT_FOLDER = "./outputs/importance/"
+SOUPS_OUTPUT_FOLDER = "./outputs/soups"
 
 FOLDERS = [
     HTML_OUTPUT_FOLDER, 
