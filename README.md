@@ -71,3 +71,10 @@ This framework is open-source and available under the [MIT License](LICENSE).
 ---
 
 Feel free to customize this README to include specific details, contact information, and branding elements relevant to your Datapalooza team's web scraper framework.
+
+
+# TAREAS
+1. Idear un mecanismo para que el usuario al final seleccione los nodos importantes que quiere scrapear
+2. Deberíamos garantizar con algunas métricas ordenemos esos nodos
+3. Detectar paginaciones (de manera automática)
+4. Detectar las interaciones en las páginas (dar click para revelar el teléfono por ejemplo)

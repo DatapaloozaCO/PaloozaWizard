@@ -5,17 +5,20 @@ config = dotenv_values(".env")
 OPEN_AI_API_KEY = config["OPEN_AI_API_KEY"]
 
 # Folder for saving intermediary results.
+AGENT_OUTPUT_FOLDER = "./outputs/agent/"
 HTML_OUTPUT_FOLDER = "./outputs/html/"
 PYTHON_OUTPUT_FOLDER = "./outputs/python/"
-AGENT_OUTPUT_FOLDER = "./outputs/agent/"
 IMPORTANCE_OUTPUT_FOLDER = "./outputs/importance/"
+JSONS_OUTPUT_FOLDER = "./outputs/jsons"
 SOUPS_OUTPUT_FOLDER = "./outputs/soups"
 
 FOLDERS = [
     HTML_OUTPUT_FOLDER, 
     PYTHON_OUTPUT_FOLDER, 
     AGENT_OUTPUT_FOLDER,
-    IMPORTANCE_OUTPUT_FOLDER
+    IMPORTANCE_OUTPUT_FOLDER,
+    JSONS_OUTPUT_FOLDER,
+    SOUPS_OUTPUT_FOLDER
 ]
 
 # Proxies data

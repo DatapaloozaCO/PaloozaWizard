@@ -29,4 +29,4 @@ file_name = "outputs/agent/amazon.py"
 string = str(soup.find("div", attrs = {"class": "a-section"}))
 
 print("Num tokens in string: ", num_tokens_from_string(string, "cl100k_base"))
-get_agent_functions(soup, tasks, file_name)
+#get_agent_functions(soup, tasks, file_name)

@@ -1,12 +1,12 @@
 import openai
-from dotenv import dotenv_values
 from typing import List 
+from dotenv import dotenv_values
 import palooza_wizard.constants as ct
 import tiktoken
 
 openai.api_key = ct.OPEN_AI_API_KEY
 
-def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0, max_tokens=500): # gpt-4
+def get_completion_from_messages(messages, model="gpt-4", temperature=0, max_tokens=500): # gpt-4
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
@@ -45,8 +45,3 @@ def format_python_completion(completion: str) -> str:
         a, b = completion.find("```python"), completion.find("```", len("```python") + 1, len(completion))
         return completion[a + len("```python"): b]
     return completion
-
-def num_tokens_from_string(string: str, encoding_name: str) -> int:
-    encoding = tiktoken.get_encoding(encoding_name)
-    num_tokens = len(encoding.encode(string))
-    return num_tokens
