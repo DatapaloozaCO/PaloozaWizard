@@ -11,6 +11,7 @@ PYTHON_OUTPUT_FOLDER = "./outputs/python/"
 IMPORTANCE_OUTPUT_FOLDER = "./outputs/importance/"
 JSONS_OUTPUT_FOLDER = "./outputs/jsons"
 SOUPS_OUTPUT_FOLDER = "./outputs/soups"
+DATA_OUTPUT_FOLDER = "./outputs/data"   
 
 FOLDERS = [
     HTML_OUTPUT_FOLDER, 

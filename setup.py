@@ -13,12 +13,12 @@ with open('requirements.txt') as f:
 
 setup(
     name="palooza_wizard",
-    version='{{VERSION_PLACEHOLDER}}',
+    version=1, #'{{VERSION_PLACEHOLDER}}',
     description="Datapalooza Scraper Framework",
     url = "https://github.com/DatapaloozaCO/datapalooza_scraper_framework",
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=requirements,
+    #install_requires=requirements,
     keywords=['scraper', 'crawler']
 )

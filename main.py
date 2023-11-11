@@ -1,17 +1,19 @@
 from palooza_wizard.graph import PaloozaGraph
 import palooza_wizard.algorithms as wizard_algos
 import palooza_wizard.utils as wizard_utils
-from palooza_wizard.agent import get_agent_functions
+import palooza_wizard.agent as agent
 import palooza_wizard.constants as ct
 
 if __name__ == "__main__":
 
     # Clean all output folders
-    #wizard_utils.clean_all_output_folders()
+    wizard_utils.clean_all_output_folders()
 
-    website_name = "startupeable"
-    url = "https://startupeable.com/glosario/que-es-una-startup/"
-    soup = wizard_utils.download_or_load_soup(url, "startupeable.html", use_proxies=False)
+    website_name = "amazon_zelda"
+    
+    #url = "https://www.rubmaps.ch/erotic-massage-hot-stones-spa-cleveland-oh-184586"
+    url = "https://www.amazon.com/Legend-Zelda-Breath-Wild-Nintendo-Switch/dp/B097B2YWFX/ref=sr_1_2?crid=AMBZI2YGNFC3&keywords=zelda%2Bvideo%2Bgame&qid=1698834691&sprefix=zelda%2Bvideogame%2Caps%2C241&sr=8-2&th=1"
+    soup = wizard_utils.download_or_load_soup(url, f"{website_name}.html", use_proxies=False)
     soup = wizard_utils.process_soup(soup)
     palooza_graph = PaloozaGraph()
     palooza_graph.get_graph(soup, labels_to_integers = False)
@@ -35,7 +37,6 @@ if __name__ == "__main__":
         verbose = True
     )
         
-    # Using file: ./outputs/soups/base_soup.html
-    # Using file: ./outputs/soups/base_soup.html
-    #get_agent_functions()
+    # Get agent functions.
+    #agent.get_agent_functions()
 

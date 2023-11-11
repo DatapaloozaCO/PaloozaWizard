@@ -12,6 +12,6 @@ for file in files:
     run_cost += input_cost
 print(f"Total run cost: {run_cost}")
 
-#num_tokens = 10 ** 6
-#training_cost = chatgpt.estimated_training_cost(num_tokens)
-#print(training_cost)
+num_tokens = 1800000
+training_cost = chatgpt.estimated_training_cost(num_tokens)
+print(training_cost * 3) 

@@ -2,7 +2,9 @@ import openai
 from typing import List 
 from dotenv import dotenv_values
 import palooza_wizard.constants as ct
+import palooza_wizard.chatgpt as chatgpt
 import tiktoken
+import logging
 
 openai.api_key = ct.OPEN_AI_API_KEY
 
@@ -33,7 +35,9 @@ def get_system_message_for_agent() -> str:
     return system_message
 
 def get_messages_for_function(user_message: str, function_name: str) -> List[str]:
-    system_message = get_system_message_for_function(function_name)
+    system_message = get_system_message_for_function(function_name) 
+    num_tokens = chatgpt.num_tokens_for_model(system_message + user_message)
+    print("Number of tokens to be sent: ", num_tokens)
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_message},

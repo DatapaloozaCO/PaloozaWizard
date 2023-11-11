@@ -22,15 +22,7 @@ def get_element_metadata(task: dict) -> tuple:
     return tag, attribute, value
 
 def get_agent_function(file_path: str) -> str:
-    #tag, attribute, value = get_element_metadata(task)
-    #if attribute and value:
-    #    user_message = str(soup.find(tag, attrs = {attribute: value}))
-    #    with open(f"user_message.html", "w") as f:
-    #        f.write(user_message)
-    #else:
-    #    user_message = str(soup.find(tag))
-    #function_name = task["function_name"]
-    with open(f'{ct.IMPORTANCE_OUTPUT_FOLDER}/{file_path}', "r") as f:
+    with open(f'{ct.IMPORTANCE_OUTPUT_FOLDER}/{file_path}', "r", encoding='windows-1252') as f:
         user_message = f.read()
     function_name = file_path
     messages = pwc.get_messages_for_function(user_message = user_message, function_name = function_name)
@@ -43,7 +35,7 @@ def save_completion(completion: str, file_name: str) -> None:
         f.write(completion)
         f.write("\n\n")
 
-def get_agent_functions() -> None:
+def get_agent_functions(indexes: List[int]) -> None:
     """Get agent functions
 
     Args:
@@ -60,12 +52,12 @@ def get_agent_functions() -> None:
     #    pass
     
     file_paths = os.listdir(ct.IMPORTANCE_OUTPUT_FOLDER)
+    #file_paths = [file_paths[index] for index in indexes]
 
     for file_path in file_paths:
         completion = get_agent_function(file_path)
         completion = pwc.format_python_completion(completion = completion)
         save_completion(completion = completion, file_name = file_path)
-
 
 def load_code_string(file_name: str):
     #{ct.FUNCTIONS_OUTPUT_FOLDER}
@@ -73,4 +65,3 @@ def load_code_string(file_name: str):
          python_code = f.read()
          print(python_code)
     return python_code
-

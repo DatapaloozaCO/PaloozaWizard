@@ -55,9 +55,13 @@ def get_soup_nodes(
         parents_name[key] = process_parent_name(value)
 
     # Get soups to process.
+    counter = 0
     for candidate in candidates:
         candidate_path = parents_name[candidate]
         soup_candidate = get_element_with_path(soup, candidate_path)
-        with open(f"{ct.IMPORTANCE_OUTPUT_FOLDER}/{website_name}_{candidate}.html", "w") as f:
+        with open(
+            f"{ct.IMPORTANCE_OUTPUT_FOLDER}/{website_name}_{counter + 1}.html",
+            "w", 
+            encoding="utf-8") as f:
              f.write(str(soup_candidate))
-             
+        counter += 1
