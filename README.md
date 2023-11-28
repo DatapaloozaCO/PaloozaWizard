@@ -1,22 +1,22 @@
-# Datapalooza Web Scraper Framework
+# 🚀 Datapalooza Web Scraper Framework
 
-![Datapalooza Logo](img/wizard.png)
+<img src = "img/wizard.png" alt = 'wizard' width = '200'>
 
 ## Overview
 
-The Datapalooza Web Scraper Framework is a powerful tool that allows users to create web scrapers with minimal effort. With just a URL as input, this framework generates a Python script that enables users to scrape data from a website of their choice.
+The Datapalooza Web Scraper Framework is a powerful tool 🛠️ that allows users to effortlessly create web scrapers with just a URL. This wizard-like framework generates a Python script tailored to your specified URL, enabling you to scrape data from any website effortlessly.
 
 ## Features
 
-- **Simplified Scraping:** Say goodbye to complex coding and configuration. You only need to provide the URL you want to scrape, and our framework takes care of the rest.
+- **Simplified Scraping:** Say goodbye to complex coding and configuration. 🚫🤯 You only need to provide the URL you want to scrape, and our framework takes care of the rest.
 
-- **Automated Script Generation:** The framework automatically generates a Python script tailored to the specified URL, saving you time and effort.
+- **Automated Script Generation:** The framework automatically conjures up a Python script 🧙‍♂️ tailored to the specified URL, saving you precious time and effort.
 
-- **Customization:** While we make scraping easy, you can still customize your scraper script to meet specific data extraction needs.
+- **Customization:** While we make scraping easy, you can still sprinkle in your own magic ✨ by customizing your scraper script to meet specific data extraction needs.
 
 ## Getting Started
 
-### Installation
+### 📥 Installation
 
 1. Clone this repository to your local machine:
 
@@ -40,7 +40,7 @@ The Datapalooza Web Scraper Framework is a powerful tool that allows users to cr
    python scraper.py URL_TO_SCRAPE
    ```
 
-3. The framework will generate a Python script in the current directory, ready for you to use for scraping.
+3. Abracadabra! The framework will generate a Python script in the current directory, ready for you to use for scraping.
 
 ## Example
 
@@ -67,14 +67,3 @@ We welcome contributions from the community. If you have ideas for improvements 
 ## License
 
 This framework is open-source and available under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README to include specific details, contact information, and branding elements relevant to your Datapalooza team's web scraper framework.
-
-
-# TAREAS
-1. Idear un mecanismo para que el usuario al final seleccione los nodos importantes que quiere scrapear
-2. Deberíamos garantizar con algunas métricas ordenemos esos nodos
-3. Detectar paginaciones (de manera automática)
-4. Detectar las interaciones en las páginas (dar click para revelar el teléfono por ejemplo)
