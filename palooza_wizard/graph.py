@@ -6,6 +6,7 @@ import random
 from typing import List
 import palooza_wizard.constants as ct
 
+
 class PaloozaGraph:
     def __init__(self) -> None:
         # Initialize global variables
@@ -36,35 +37,34 @@ class PaloozaGraph:
             self.sizes.append(1)
 
     # Get node name
-    def get_node_name(
-            self,
-            soup: BeautifulSoup,
-            parent_name: str,
-            index: int
-        ) -> None:
+    def get_node_name(self, soup: BeautifulSoup, parent_name: str, index: int) -> None:
         self.get_color(soup)
         node_name = f"{parent_name}__{index}__{str(soup.name)}__*"
         return node_name
 
     # Get node properties
-    def get_node_properties(self, soup: BeautifulSoup, parent_name: str, node_name: str) -> dict:
+    def get_node_properties(
+        self, soup: BeautifulSoup, parent_name: str, node_name: str
+    ) -> dict:
         properties = {
-            "tag": soup.name, # h1, h2, p, ..., 
+            "tag": soup.name,  # h1, h2, p, ...,
             "parent_name": parent_name,
             "node_name": node_name,
             "number": self.counter,
-            "class": soup.get("class"), # ['a', 'b']
-            "id": soup.get("id"),       #
+            "class": soup.get("class"),  # ['a', 'b']
+            "id": soup.get("id"),  #
             ct.SELECTOR_LABEL: {
                 "tag": soup.name,
                 "class": soup.get("class"),
-                "id": soup.get("id")
-            }
+                "id": soup.get("id"),
+            },
         }
         return properties
 
     # Add nodes to the graph
-    def add_nodes(self, soup: BeautifulSoup, parent_name: str = "", index: int = 1, depth: int = 0):
+    def add_nodes(
+        self, soup: BeautifulSoup, parent_name: str = "", index: int = 1, depth: int = 0
+    ):
 
         if soup is None:
             return
@@ -87,12 +87,12 @@ class PaloozaGraph:
             children = soup.findChildren(recursive=False)
 
             # While there is just one children, keep going down
-            #while len(children) == 1:
+            # while len(children) == 1:
             #    children = children[0]
             #    children = children.findChildren(recursive=False)
 
             # Add children only if there is more than 1 children
-            #if len(children) > 1:
+            # if len(children) > 1:
             for i in range(len(children)):
                 self.add_nodes(children[i], node_name, i + 1, depth + 1)
 

@@ -1,9 +1,9 @@
 import streamlit as st
-import trubrics 
-import validators 
+import trubrics
+import validators
 
-st.set_page_config(page_title='Palooza Wizard 🧙‍♂️', page_icon='🧙‍♂️', layout='wide')
-st.title('About Palooza Wizard 🤔')
+st.set_page_config(page_title="Palooza Wizard 🧙‍♂️", page_icon="🧙‍♂️", layout="wide")
+st.title("About Palooza Wizard 🤔")
 
 st.header("🤓 Goal")
 st.markdown("lorem10")
