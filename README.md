@@ -1,4 +1,4 @@
-# 🚀 Datapalooza Web Scraper Framework
+# 🚀 Palooza Wizard
 
 <center>
 <img src = "img/wizard.png" alt = 'wizard' width = '200'>
@@ -6,7 +6,7 @@
 
 ## Overview
 
-The Datapalooza Web Scraper Framework is a powerful tool 🛠️ that allows users to effortlessly create web scrapers with just a URL. This wizard-like framework generates a Python script tailored to your specified URL, enabling you to scrape data from any website effortlessly.
+Palooza Wizar is a powerful tool 🛠️ that allows users to effortlessly create web scrapers with just a URL. This wizard-like framework generates a Python script tailored to your specified URL, enabling you to scrape data from any website effortlessly.
 
 ## Features
 
