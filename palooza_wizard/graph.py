@@ -37,7 +37,9 @@ class PaloozaGraph:
             self.sizes.append(1)
 
     # Get node name
-    def get_node_name(self, soup: BeautifulSoup, parent_name: str, index: int) -> None:
+    def get_node_name(
+        self, soup: BeautifulSoup, parent_name: str, index: int
+    ) -> None:
         self.get_color(soup)
         node_name = f"{parent_name}__{index}__{str(soup.name)}__*"
         return node_name
@@ -63,7 +65,11 @@ class PaloozaGraph:
 
     # Add nodes to the graph
     def add_nodes(
-        self, soup: BeautifulSoup, parent_name: str = "", index: int = 1, depth: int = 0
+        self,
+        soup: BeautifulSoup,
+        parent_name: str = "",
+        index: int = 1,
+        depth: int = 0,
     ):
 
         if soup is None:
@@ -75,7 +81,9 @@ class PaloozaGraph:
             node_name = self.get_node_name(soup, parent_name, index)
 
             # Add node to the graph.
-            properties = self.get_node_properties(soup, parent_name, node_name)
+            properties = self.get_node_properties(
+                soup, parent_name, node_name
+            )
             self.G.add_node(node_name, **properties)
             self.counter += 1
 
@@ -94,9 +102,13 @@ class PaloozaGraph:
             # Add children only if there is more than 1 children
             # if len(children) > 1:
             for i in range(len(children)):
-                self.add_nodes(children[i], node_name, i + 1, depth + 1)
+                self.add_nodes(
+                    children[i], node_name, i + 1, depth + 1
+                )
 
-    def get_graph(self, soup: BeautifulSoup, labels_to_integers: bool = True):
+    def get_graph(
+        self, soup: BeautifulSoup, labels_to_integers: bool = True
+    ):
         self.add_nodes(soup, ct.ROOT_LABEL)
         if labels_to_integers:
             self.G = nx.convert_node_labels_to_integers(self.G)

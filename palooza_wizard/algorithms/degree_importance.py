@@ -7,7 +7,9 @@ import joblib
 import sys
 
 
-def filter_candidates_by_containment(graph: nx.DiGraph, candidates: List[int]):
+def filter_candidates_by_containment(
+    graph: nx.DiGraph, candidates: List[int]
+):
     """Para todo g1, g2 e I, g1 no contiene a g2 ni g2 a g1"""
     inadmissable_nodes = []
     for candidate in candidates:
@@ -28,12 +30,20 @@ def filter_candidates_by_depth(
 
 
 def filter_candidates(
-    graph: nx.DiGraph, root: str, candidates: List[int], min_depth: int = 3
+    graph: nx.DiGraph,
+    root: str,
+    candidates: List[int],
+    min_depth: int = 3,
 ):
     candidates = [
-        x for x in filter_candidates_by_depth(graph, root, candidates, min_depth)
+        x
+        for x in filter_candidates_by_depth(
+            graph, root, candidates, min_depth
+        )
     ]
-    candidates = [x for x in filter_candidates_by_containment(graph, candidates)]
+    candidates = [
+        x for x in filter_candidates_by_containment(graph, candidates)
+    ]
     return candidates
 
 
@@ -60,7 +70,9 @@ def degree_importance(
     candidates = [x[0] for x in nodes_degree]
 
     # Filter candidates.
-    candidates = filter_candidates(graph, root, candidates, min_depth=min_depth)
+    candidates = filter_candidates(
+        graph, root, candidates, min_depth=min_depth
+    )
 
     if verbose:
         print("Candidates")

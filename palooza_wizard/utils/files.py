@@ -7,7 +7,9 @@ import shutil
 from typing import List
 
 
-def get_files_in_folder(folder_path: str, full_path: bool = True) -> List[str]:
+def get_files_in_folder(
+    folder_path: str, full_path: bool = True
+) -> List[str]:
     if not file_exists(folder_path):
         raise Exception("Folder not found")
     files = os.listdir(folder_path)
@@ -68,7 +70,9 @@ def get_html_from_url(url: str, use_proxies: bool = True) -> str:
     return data.content
 
 
-def get_soup_from_url(url: str, use_proxies: bool = True) -> BeautifulSoup:
+def get_soup_from_url(
+    url: str, use_proxies: bool = True
+) -> BeautifulSoup:
     """Download HTML file and return a BeautifulSoup object using get_html_from_url function"""
     soup = get_html_from_url(url, use_proxies=use_proxies)
     soup = BeautifulSoup(soup, "html.parser")

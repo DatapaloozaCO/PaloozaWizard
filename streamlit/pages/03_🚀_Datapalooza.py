@@ -60,12 +60,18 @@ st.header("🔗 Links")
 
 col1, col2 = st.columns(2)
 with col1:
-    st.markdown("### [🔵 Linkedin](https://www.linkedin.com/company/datapalooza/)")
+    st.markdown(
+        "### [🔵 Linkedin](https://www.linkedin.com/company/datapalooza/)"
+    )
     # st.image('images/octocat.png', width=150)
-    st.write("Get to know our data services and products. Contact us today!")
+    st.write(
+        "Get to know our data services and products. Contact us today!"
+    )
 
 with col2:
-    st.markdown("### [:incoming_envelope: Email](mailto:info@datapalooza.co)")
+    st.markdown(
+        "### [:incoming_envelope: Email](mailto:info@datapalooza.co)"
+    )
     # st.image('images/kaggle.png', width=125)
     st.write(
         "Do you have questions or a special inquery? Write us to **info@datapalooza.co**"
@@ -74,4 +80,6 @@ with col2:
 st.markdown(
     "### ➡️ Visit Chain Breaker 🔗 Website: [here](https://chainbreaker.datapalooza.co/)"
 )
-st.markdown("### ➡️ Visit our Website: [🚀 Datapalooza](https://datapalooza.co)")
+st.markdown(
+    "### ➡️ Visit our Website: [🚀 Datapalooza](https://datapalooza.co)"
+)

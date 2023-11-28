@@ -40,9 +40,13 @@ def get_system_message_for_agent() -> str:
     return system_message
 
 
-def get_messages_for_function(user_message: str, function_name: str) -> List[str]:
+def get_messages_for_function(
+    user_message: str, function_name: str
+) -> List[str]:
     system_message = get_system_message_for_function(function_name)
-    num_tokens = chatgpt.num_tokens_for_model(system_message + user_message)
+    num_tokens = chatgpt.num_tokens_for_model(
+        system_message + user_message
+    )
     print("Number of tokens to be sent: ", num_tokens)
     messages = [
         {"role": "system", "content": system_message},

@@ -20,13 +20,19 @@ def get_agent_code(file_name: str):
 
 def get_element_metadata(task: dict) -> tuple:
     data = task["element"]
-    tag, attribute, value = data["tag"], data["attribute"], data["value"]
+    tag, attribute, value = (
+        data["tag"],
+        data["attribute"],
+        data["value"],
+    )
     return tag, attribute, value
 
 
 def get_agent_function(file_path: str) -> str:
     with open(
-        f"{ct.IMPORTANCE_OUTPUT_FOLDER}/{file_path}", "r", encoding="windows-1252"
+        f"{ct.IMPORTANCE_OUTPUT_FOLDER}/{file_path}",
+        "r",
+        encoding="windows-1252",
     ) as f:
         user_message = f.read()
     function_name = file_path
@@ -65,7 +71,9 @@ def get_agent_functions() -> None:
 
     for file_path in file_paths:
         completion = get_agent_function(file_path)
-        completion = pwc.format_python_completion(completion=completion)
+        completion = pwc.format_python_completion(
+            completion=completion
+        )
         save_completion(completion=completion, file_name=file_path)
 
 

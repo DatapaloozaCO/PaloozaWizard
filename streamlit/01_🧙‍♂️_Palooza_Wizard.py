@@ -4,7 +4,9 @@ import validators
 import streamlit.components.v1 as components
 import palooza_wizard as wizard
 
-st.set_page_config(page_title="Palooza Wizard 🧙‍♂️", page_icon="🧙‍♂️", layout="wide")
+st.set_page_config(
+    page_title="Palooza Wizard 🧙‍♂️", page_icon="🧙‍♂️", layout="wide"
+)
 st.title("Palooza Wizard 🧙‍♂️")
 
 st.markdown(
@@ -13,7 +15,9 @@ st.markdown(
 st.divider()
 interacted = 0
 
-url = st.text_input("Input an URL", placeholder="https://www.google.com/", value="")
+url = st.text_input(
+    "Input an URL", placeholder="https://www.google.com/", value=""
+)
 valid_url = 1 if validators.url(url) else 0
 if not valid_url and url != "":
     st.error("The URL is not valid", icon="🚨")

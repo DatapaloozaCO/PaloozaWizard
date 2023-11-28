@@ -4,7 +4,9 @@ import argparse
 try:
     from palooza_wizard import DatapaloozaWizard
 except ImportError as e:
-    msg = '"{}"\nPlease install `palooza_wizard` to resolve this error.'
+    msg = (
+        '"{}"\nPlease install `palooza_wizard` to resolve this error.'
+    )
     raise ImportError(msg.format(str(e)))
 
 
@@ -16,9 +18,13 @@ def main():
         help="search engine(s) - " + ", ".join(search_engines_dict),
         default="google",
     )
-    ap.add_argument("-o", help="output file [html, csv, json]", default="print")
     ap.add_argument(
-        "-n", help="filename for output file", default=config.OUTPUT_DIR + "output"
+        "-o", help="output file [html, csv, json]", default="print"
+    )
+    ap.add_argument(
+        "-n",
+        help="filename for output file",
+        default=config.OUTPUT_DIR + "output",
     )
     ap.add_argument(
         "-p",
@@ -26,14 +32,20 @@ def main():
         default=config.SEARCH_ENGINE_RESULTS_PAGES,
         type=int,
     )
-    ap.add_argument("-f", help="filter results [url, title, text, host]", default=None)
+    ap.add_argument(
+        "-f",
+        help="filter results [url, title, text, host]",
+        default=None,
+    )
     ap.add_argument(
         "-i",
         help="ignore duplicats, useful when multiple search engines are used",
         action="store_true",
     )
     ap.add_argument(
-        "-proxy", help="use proxy (protocol://ip:port)", default=config.PROXY
+        "-proxy",
+        help="use proxy (protocol://ip:port)",
+        default=config.PROXY,
     )
 
     args = ap.parse_args()
@@ -47,7 +59,10 @@ def main():
     ]
 
     if not engines:
-        print("Please choose a search engine: " + ", ".join(search_engines_dict))
+        print(
+            "Please choose a search engine: "
+            + ", ".join(search_engines_dict)
+        )
     else:
         if "all" in engines:
             engine = AllSearchEngines(proxy, timeout)
