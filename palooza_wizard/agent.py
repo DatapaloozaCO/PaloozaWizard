@@ -35,7 +35,7 @@ def save_completion(completion: str, file_name: str) -> None:
         f.write(completion)
         f.write("\n\n")
 
-def get_agent_functions(indexes: List[int]) -> None:
+def get_agent_functions() -> None:
     """Get agent functions
 
     Args:

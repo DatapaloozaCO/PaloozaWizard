@@ -1,6 +1,6 @@
 # Datapalooza Web Scraper Framework
 
-![Datapalooza Logo](img/rocket.png)
+![Datapalooza Logo](img/wizard.png)
 
 ## Overview
 
