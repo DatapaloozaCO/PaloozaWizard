@@ -1,6 +1,6 @@
 # 🚀 Palooza Wizard
 
-Experience the magic touch of Palooza Wizard – Crafting Python scripts with just a URL, making scraping a breeze.
+*Experience the magic touch of Palooza Wizard – Crafting Python scripts with just a URL, making scraping a breeze.*
 
 <center>
 <img src = "img/wizard.png" alt = 'wizard' width = '200'>
