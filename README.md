@@ -1,6 +1,8 @@
 # 🚀 Datapalooza Web Scraper Framework
 
+<center>
 <img src = "img/wizard.png" alt = 'wizard' width = '200'>
+</center>
 
 ## Overview
 
