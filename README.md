@@ -54,18 +54,14 @@ python scraper.py https://example.com
 
 The framework will generate a Python script named `example_com_scraper.py`, which you can then execute to scrape data from "example.com."
 
-## Customization
+# Customization 🛠️
+While the generated script provides a basic scraping setup, you can customize it to suit your needs. Add additional code for data processing or sprinkle in more scraping magic as required.
 
-While the generated script provides a basic scraping setup, you can customize it to suit your needs. Add additional code for data processing or further scraping as required.
-
-## About Datapalooza
-
+# About Datapalooza 🚀
 Datapalooza is a collaborative team of data enthusiasts dedicated to simplifying data-related tasks and empowering users to harness the power of data.
 
-## Contribution
-
+# Contribution 🤝
 We welcome contributions from the community. If you have ideas for improvements or bug fixes, please open an issue or submit a pull request.
 
-## License
-
-This framework is open-source and available under the [MIT License](LICENSE).
+# License 📜
+This framework is open-source and available under the MIT License.
